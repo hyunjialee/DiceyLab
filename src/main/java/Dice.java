@@ -7,7 +7,7 @@ public class Dice {
 
     private Integer numberOfDies;
 
-    Dice(int numberOfDies){
+    public Dice(int numberOfDies){
         this.numberOfDies = numberOfDies;
         // How many dices you are rolling
     }

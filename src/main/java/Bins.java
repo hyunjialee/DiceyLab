@@ -34,4 +34,11 @@ public class Bins {
         //
     }
 
+    public Map<Integer, Integer> getBins() {
+        return bins;
+    }
+
+    public void setBins(Map<Integer, Integer> bins) {
+        this.bins = bins;
+    }
 }
