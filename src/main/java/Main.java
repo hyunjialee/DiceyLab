@@ -4,7 +4,7 @@ public class Main {
 
 
 
-        Simulation one = new Simulation(1,1000);
+        Simulation one = new Simulation(3,1000000);
 
         one.runSimulation();
 

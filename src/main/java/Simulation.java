@@ -48,15 +48,19 @@ public class Simulation {
         sb.append("*** \n Simulation of " + numberOfDies + " dice tossed for " + numberOfTosses + " time.\n***");
 
         for (Map.Entry<Integer, Integer> entry : this.bin.getBins().entrySet()) {
-            x = new BigDecimal((float) entry.getValue() / (float) numberOfTosses);
+            float normalDist = (float) entry.getValue() / (float) numberOfTosses;
+            x = new BigDecimal(normalDist);
 
-            sb.append("\n" + entry.getKey() + " " + entry.getValue() + " ");
-
+            sb.append(String.format("\n%2d : %9d: ", entry.getKey(), entry.getValue()));
+            sb.append(" ");
             //\n%2d: %9d:",
-            sb.append(x.setScale(2, RoundingMode.CEILING));
+            sb.append(x.setScale(2, RoundingMode.CEILING) + " ");
 
             // sb.append() need to create either a for loop || value of the X to number of *'s
-
+            int stars = (int) (normalDist * 100);
+            for (int i = 0; i < stars; i++){
+                sb.append("*");
+            }
         }
         return sb.toString();
     }
