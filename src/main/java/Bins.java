@@ -40,4 +40,5 @@ public class Bins {
     public void setBins(Map<Integer, Integer> bins) {
         this.bins = bins;
     }
+
 }
