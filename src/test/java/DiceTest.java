@@ -26,6 +26,11 @@ public class DiceTest {
         int numberOfDice = 2;
 
         Dice dice1 = new Dice(numberOfDice);
+        int actual = dice1.getNumberOfDies();
+        int expected = 2;
+
+
+        Assert.assertEquals(expected, actual);
 
     }
 
