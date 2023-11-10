@@ -31,7 +31,6 @@ public class Bins {
         // Adding value by one to increase the bin number
 
         this.bins.put(binNumber, x);
-        //
     }
 
     public Map<Integer, Integer> getBins() {

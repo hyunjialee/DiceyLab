@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -39,8 +41,23 @@ public class Simulation {
         }
     }
 
-    public String printResults(){
-        return null;
+    public String printResults() {
+        StringBuilder sb = new StringBuilder();
 
+        BigDecimal x;
+        sb.append("*** \n Simulation of " + numberOfDies + " dice tossed for " + numberOfTosses + " time.\n***");
+
+        for (Map.Entry<Integer, Integer> entry : this.bin.getBins().entrySet()) {
+            x = new BigDecimal((float) entry.getValue() / (float) numberOfTosses);
+
+            sb.append("\n" + entry.getKey() + " " + entry.getValue() + " ");
+
+            //\n%2d: %9d:",
+            sb.append(x.setScale(2, RoundingMode.CEILING));
+
+            // sb.append() need to create either a for loop || value of the X to number of *'s
+
+        }
+        return sb.toString();
     }
 }
